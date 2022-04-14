@@ -8,14 +8,23 @@ body {
   font-size: 18px;
 }
 
+[data-theme='dark'] body {
+  color: #fff;
+  background: #111213ff;
+}
+
 * {
   box-sizing: border-box;
 }
 
 a {
-  color: #034694;
+  color:  #034694;
   text-decoration: none;
   font-weight: 800;
+}
+
+[data-theme='dark'] a {
+  color: #6A7AB5;
 }
 
 a:hover {

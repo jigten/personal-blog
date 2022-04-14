@@ -4,13 +4,10 @@
   letter-spacing: -0.05rem;
 }
 
-.heading2Xl {
-    @extend .headers;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin: 1rem 0;
-  }
-  
+[data-theme='dark'] .headers {
+  color: #6A7AB5;
+}
+
   .headingXl {
     @extend .headers;
     font-size: 2rem;
@@ -19,22 +16,19 @@
   }
   
   .headingLg {
+    @extend .headers;
     font-size: 1.5rem;
     line-height: 1.4;
     margin: 1rem 0;
   }
   
   .headingMd {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.5;
   }
-  
-  .borderCircle {
-    border-radius: 9999px;
-  }
-  
-  .colorInherit {
-    color: inherit;
+
+  .infoText {
+    font-size: 16px;
   }
   
   .padding1px {
