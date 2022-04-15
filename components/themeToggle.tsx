@@ -1,8 +1,13 @@
 import {useTheme} from 'next-themes';
 import styles from './themeToggle.module.scss';
+import {useEffect, useState} from 'react';
 
 const ButtonToggleDarkMode = () => {
   const {theme, setTheme} = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   return (
     <div>
