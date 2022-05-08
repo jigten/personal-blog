@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import {remark} from 'remark';
-import html from 'remark-html';
 import { serialize } from "next-mdx-remote/serialize";
+import readingTime from 'reading-time'
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -20,6 +19,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...(matterResult.data as {date: string; title: string; readTime: string}),
+      readTime: readingTime(matterResult.content).text,
     };
   });
 

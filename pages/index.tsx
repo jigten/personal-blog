@@ -51,7 +51,7 @@ export default function Home({allPostsData}) {
               <br />
               <small className={utilStyles.lightText}>
                 <span className={styles.metaInfo}>
-                  <Date dateString={date} /> • {readTime} min read
+                  <Date dateString={date} /> • {readTime}
                 </span>
               </small>
             </li>
