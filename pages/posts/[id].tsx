@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.scss';
 import {GetStaticProps, GetStaticPaths} from 'next';
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -28,7 +29,7 @@ export default function Post({
   postData: {
     title: string;
     date: string;
-    contentHtml: string;
+    content: MDXRemoteSerializeResult;
   };
 }) {
   return (
@@ -41,7 +42,7 @@ export default function Post({
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
+        <MDXRemote {...postData.content} />
       </article>
     </Layout>
   );
